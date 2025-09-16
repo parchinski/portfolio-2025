@@ -1185,15 +1185,15 @@ const DEFAULT_PARAMETERS: EffectParameters = {
   reactivity: 3.0,
 } as const;
 
-// Apple's thermal gradient colors (black to red/orange spectrum)
+// thermal gradient colors (7-color palette)
 const THERMAL_PALETTE = [
-  "000000", // Black
-  "073dff", // Deep blue
-  "53d5fd", // Cyan
-  "fefcdd", // Light yellow
-  "ffec6a", // Yellow
-  "f9d400", // Orange
-  "a61904", // Red
+  "000000", // Black base
+  "2d1b69", // Deep purple shadow
+  "40309a", // Dark purple
+  "5648d8", // Primary mid
+  "6b5bff", // Primary
+  "9086ff", // Lightened primary
+  "c5c1ff", // Soft highlight
 ] as const;
 
 // Animation timing constants
