@@ -7,6 +7,7 @@ import { Variants } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { AnimatedGroup } from "@/components/ui/animated-group";
+import { ThermalEffect } from "../ui/thermal-shader";
 
 const transitionVariants: { item: Variants } = {
   item: {
@@ -99,6 +100,24 @@ export function HeroContent() {
               </a>
             </Button>
           </div>
+        </AnimatedGroup>
+        <AnimatedGroup
+          variants={{
+            container: {
+              visible: {
+                transition: {
+                  staggerChildren: 0.05,
+                  delayChildren: 1.25,
+                },
+              },
+            },
+            ...transitionVariants,
+          }}
+          className="mt-12 flex items-center justify-center gap-6"
+        >
+          <ThermalEffect logoUrl="/arch.jpg" width={144} height={144} />
+          <p className="text-4xl font-thin">X</p>
+          <ThermalEffect logoUrl="/apple.jpg" width={144} height={144} />
         </AnimatedGroup>
       </div>
     </div>
