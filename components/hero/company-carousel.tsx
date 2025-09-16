@@ -52,21 +52,21 @@ export function CompanyCarousel() {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
-  // Prevent hydration mismatch
+  // prevent hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden py-8 mb-4">
-      {/* Heading */}
+    <div className="relative w-full overflow-hidden py-8 mb-4 isolate">
+      {/* heading */}
       <div className="text-center mb-8">
         <h3 className="text-xl font-medium text-muted-foreground">
           Companies I&apos;ve Worked With
         </h3>
       </div>
 
-      {/* Company carousel */}
+      {/* company carousel */}
       <Marquee>
         <MarqueeContent pauseOnHover>
           {mounted &&

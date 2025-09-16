@@ -10,7 +10,11 @@ export function HeroSection() {
     <>
       <HeroHeader />
       <main className="overflow-hidden">
-        <section className="min-h-screen flex flex-col">
+        <section className="relative isolate min-h-screen flex flex-col">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 -z-5 backdrop-blur-[2px] bg-background/20 mix-blend-soft-light"
+          />
           <div className="relative flex-grow pt-24 md:pt-36">
             <HeroBackground />
             <HeroContent />

@@ -10,13 +10,14 @@ export function HeroBackground() {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Prevent hydration mismatch
+  // prevent hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
 
   return (
     <>
+      {/* decorative gradients */}
       <div
         aria-hidden
         className="z-[2] absolute inset-0 pointer-events-none isolate contain-strict hidden lg:block"
@@ -59,27 +60,16 @@ export function HeroBackground() {
               <Image
                 src="/dark-background.jpg"
                 alt="Dark background"
-                className="absolute inset-x-0 top-56 -z-20 w-full h-auto object-cover lg:top-32 opacity-80"
+                className="absolute inset-0 -z-20 w-full h-full object-cover opacity-80"
                 width="3276"
                 height="4095"
               />
-            ) : (
-              <div
-                aria-hidden
-                className="absolute inset-0 -z-15 backdrop-blur-[2px] bg-background/20 mix-blend-soft-light"
-              />
-            )}
+            ) : null}
           </>
         )}
       </AnimatedGroup>
 
-      {/* Blur overlay */}
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-15 backdrop-blur-[2px] bg-background/20 mix-blend-soft-light"
-      />
-
-      {/* Gradient fade */}
+      {/* gradient fade */}
       <div
         aria-hidden
         className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]"
